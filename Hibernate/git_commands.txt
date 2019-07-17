@@ -1,0 +1,78 @@
+## cd /path/to/my/codebase
+
+## global configureation
+git config --global user.email "daveywang@live.com"
+git config --global user.name "Liwei Wang"
+$ git config --list                            --> list git configurations
+
+##create a new repository
+git init                    --> Initialized empty Git repository 
+git add --all               --> Staging the changes 
+-- git reset                --> unstage the changes
+git commit -m "message"     --> Commit changes to the local repository    
+
+## clone remote repositiry to local
+cd /path/to/my/codebase
+git clone https://github.com/daveywang/runtime_ii.git
+
+
+## push local repository to remote (GitHub) 
+git remote add origin https://github.com/daveywang/runtime_ii.git  ####-> run only once
+git push origin master
+
+## push branch to remote
+git push origin <branch-name>
+
+## merge branch to master 
+git checkout master
+-- git pull origin master  ### pull remote master branch to local
+git merge hibernate
+git push origin master
+
+## create a branch 
+git checkout master
+git checkout -b [name_of_your_new_branch]
+git checkout -b springBoot
+
+## change to a specific branch
+git checkout [branch_name]
+
+## add a tag
+git tag -a v0.1 -m "warming up"
+git tag -a v0.2 -m "Hibernate"
+
+## push tag to remote
+git push origin v0.1
+## or
+git push origin --tags // push all tags to remote
+
+## delete tag in local
+git tag -d v0.1
+## delete tag in remote
+git push origin --delete <tagname>
+
+## checking out tag 
+git checkout v0.1
+
+
+## compare two branched code
+git diff <source_branch> <target_branch>
+git diff <tag1> <tag2>
+git diff master hibernate
+git diff v0.1 v0.2
+
+
+## remove tracking folders or file in a branch
+git checkout hibernate
+git rm -r --cached target/
+git rm -r --cached .idea/
+git commit -m "Removed all unnecessary files from repository"
+git push origin hibernate
+
+git checkout master
+git rm -r --cached target/
+git rm -r --cached .idea/
+git rm -r --cached runtime_ii.iml
+git add .gitignore
+git commit -m "Removed all unnecessary files from repository"
+git push origin master

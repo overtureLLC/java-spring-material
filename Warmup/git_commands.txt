@@ -1,0 +1,37 @@
+## cd /path/to/my/codebase
+##create a new repository
+git init
+git add .
+git commit -m "first commit"
+
+
+## push local repository to remote (GitHub) 
+git remote add origin https://github.com/daveywang/runtime_ii.git
+git push -u origin master
+
+
+## create a branch 
+git checkout -b [name_of_your_new_branch]
+
+## change to a specific branch
+git checkout [branch_name]
+
+## push branch to remote
+git push -u origin <branch-name>
+
+## add a tag
+git tag -a v0.1 -m "warming up"
+
+## push tag to remote
+git push origin v0.1
+## or
+git push origin --tags // push all tags to remote
+
+## delete tag in local
+git tag -d v0.1
+## delete tag in remote
+git push origin --delete <tagname>
+
+## checking out tag 
+git checkout v0.1
+

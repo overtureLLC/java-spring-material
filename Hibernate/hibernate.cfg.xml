@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/training_db</property>
+        <property name="hibernate.connection.username">admin</property>
+        <property name="hibernate.connection.password">Training123!</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">false</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+        <!-- add classes to map from here -->
+        <mapping class="com.ascending.training.model.Department" />
+        <mapping class="com.ascending.training.model.Employee" />
+        <mapping class="com.ascending.training.model.Account" />
+    </session-factory>
+</hibernate-configuration>
