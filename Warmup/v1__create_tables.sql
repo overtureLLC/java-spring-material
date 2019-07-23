@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS department CASCADE;
+DROP TABLE IF EXISTS employee CASCADE;
+DROP TABLE IF EXISTS account CASCADE;
+
 DROP SEQUENCE IF EXISTS department_id_seq;
 DROP SEQUENCE IF EXISTS employee_id_seq;
 DROP SEQUENCE IF EXISTS account_id_seq;
@@ -5,10 +9,6 @@ DROP SEQUENCE IF EXISTS account_id_seq;
 CREATE SEQUENCE department_id_seq START WITH 1;
 CREATE SEQUENCE employee_id_seq START WITH 1;
 CREATE SEQUENCE account_id_seq START WITH 1;
-
-DROP TABLE IF EXISTS department CASCADE;
-DROP TABLE IF EXISTS employee CASCADE;
-DROP TABLE IF EXISTS account CASCADE;
 
 
 CREATE TABLE department (
@@ -27,7 +27,7 @@ CREATE TABLE employee (
     last_name       VARCHAR(30),
     email           VARCHAR(50),
     address         VARCHAR(150),
-    department_id   INTEGER NOT NULL
+    department_id   INTEGER
 );
 
 ALTER TABLE employee ADD CONSTRAINT employee_pk PRIMARY KEY ( id );
