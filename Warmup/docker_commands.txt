@@ -1,0 +1,10 @@
+docker run --name dealerDB -e POSTGRES_DB=dealer -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=password -p 5431:5432 -d postgres
+
+Host: localhost
+database : dealer
+Username: admin
+Password: password
+Port: 5432
+
+docker container name: dealerDB
+local mapped port 5431
